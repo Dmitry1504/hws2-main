@@ -31,6 +31,7 @@ const SuperInputText: React.FC<SuperInputTextPropsType> = (
         className,
         spanClassName,
         id,
+        value,
         ...restProps // все остальные пропсы попадут в объект restProps
     }
 ) => {
@@ -59,6 +60,7 @@ const SuperInputText: React.FC<SuperInputTextPropsType> = (
             <input
                 id={id}
                 type={'text'}
+                value={value || ''}
                 onChange={onChangeCallback}
                 onKeyPress={onKeyPressCallback}
                 className={finalInputClassName}

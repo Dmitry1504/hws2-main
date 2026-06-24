@@ -59,17 +59,24 @@ const SuperEditableSpan: React.FC<SuperEditableSpanType> = (
 
     const spanClassName = s.span
         + (className ? ' ' + className : '')
+    const displayText = children || value || defaultText || 'enter text...'
+
+    const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+        onChange?.(e)
+        onChangeText?.(e.currentTarget.value)
+    }
 
     return (
         <>
             {editMode ? (
                 <SuperInputText
+                    id="hw6-spanable-input"
                     autoFocus={autoFocus || true}
                     onBlur={onBlurCallback}
                     onEnter={onEnterCallback}
                     className={s.input}
-                    value={value}
-                    onChange={onChange}
+                    value={value || ''}
+                    onChange={onChangeHandler}
                     {...restProps} // отдаём инпуту остальные пропсы если они есть (value например там внутри)
                 />
             ) : (
@@ -80,13 +87,14 @@ const SuperEditableSpan: React.FC<SuperEditableSpanType> = (
                         alt={'edit'}
                     />
                     <span
+                        id="hw6-editable-span"
                         onDoubleClick={onDoubleClickCallBack}
                         className={spanClassName}
                         {...restSpanProps}
                     >
                         {/*если нет захардкодженного текста для спана, то значение инпута*/}
 
-                        {children || value || defaultText}
+                        {displayText}
                     </span>
                 </div>
             )}
