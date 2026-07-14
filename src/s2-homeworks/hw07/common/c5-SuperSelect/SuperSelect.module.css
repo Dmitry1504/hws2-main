@@ -1,9 +1,26 @@
 .select {
+    padding: 8px 12px;
+    font-size: 14px;
+    font-family: inherit;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: white;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-width: 150px;
+}
+
+.select:hover {
+    border-color: #b0b0b0;
 }
 
 .select:focus {
+    outline: none;
+    border-color: #4a90d9;
+    box-shadow: 0 0 0 3px rgba(74, 144, 217, 0.15);
 }
 
-
-.option:hover {
+.option {
+    padding: 8px 12px;
 }
