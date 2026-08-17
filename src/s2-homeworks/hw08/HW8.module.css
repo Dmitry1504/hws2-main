@@ -3,55 +3,104 @@
     flex-direction: column;
     gap: 20px;
     padding: 20px 0;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .buttonsContainer {
     display: flex;
-    gap: 10px;
-    margin-bottom: 10px;
+    gap: 12px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
 }
 
 .users {
     width: 100%;
     border-collapse: collapse;
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
+
 
 .thead {
-    background-color: #f5f5f5;
-    font-weight: bold;
-    border-bottom: 2px solid #ddd;
+    background-color: #4a6fa5;
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
-.thead td {
-    padding: 12px 16px;
+.thead th {
+    padding: 14px 20px;
     text-align: left;
 }
 
+.thead th:last-child {
+    text-align: center;
+}
+
+
 .nameCol {
+    padding: 12px 20px;
+    font-size: 15px;
+    border-bottom: 1px solid #e8e8e8;
     width: 70%;
-    padding: 10px 16px;
+    color: #333;
 }
 
 .ageCol {
-    width: 30%;
-    padding: 10px 16px;
+    padding: 12px 20px;
+    font-size: 15px;
+    border-bottom: 1px solid #e8e8e8;
     text-align: center;
+    width: 30%;
+    font-weight: 600;
+    color: #4a6fa5;
 }
 
+
 .item {
-    border-bottom: 1px solid #eee;
-    transition: background-color 0.2s;
+    background-color: white;
+    transition: background-color 0.2s ease;
 }
 
 .item:hover {
-    background-color: #fafafa;
+    background-color: #f0f5ff;
 }
 
-.item td {
-    padding: 10px 16px;
+.item:last-child td {
+    border-bottom: none;
 }
 
-.item .ageCol {
-    text-align: center;
+.item:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+.item:nth-child(even):hover {
+    background-color: #f0f5ff;
+}
+
+
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+        max-width: 100%;
+    }
+
+    .buttonsContainer {
+        gap: 8px;
+    }
+
+    .nameCol, .ageCol {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+
+    .thead th {
+        padding: 10px 12px;
+        font-size: 14px;
+    }
 }
