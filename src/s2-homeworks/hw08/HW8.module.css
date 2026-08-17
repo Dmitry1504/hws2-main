@@ -1,23 +1,57 @@
-.item {
-}
-
-.item:last-of-type {
-}
-
-.users {
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px 0;
 }
 
 .buttonsContainer {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
 }
 
-.container {
+.users {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Segoe UI', sans-serif;
 }
 
 .thead {
+    background-color: #f5f5f5;
+    font-weight: bold;
+    border-bottom: 2px solid #ddd;
+}
+
+.thead td {
+    padding: 12px 16px;
+    text-align: left;
 }
 
 .nameCol {
+    width: 70%;
+    padding: 10px 16px;
 }
 
 .ageCol {
+    width: 30%;
+    padding: 10px 16px;
+    text-align: center;
+}
+
+.item {
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.2s;
+}
+
+.item:hover {
+    background-color: #fafafa;
+}
+
+.item td {
+    padding: 10px 16px;
+}
+
+.item .ageCol {
+    text-align: center;
 }
